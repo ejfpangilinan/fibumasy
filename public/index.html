@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link href = "./images/HeaderLogo.png" rel="icon" type="image/gif">
+	<title>FiBuMaSy</title>
+	<link rel="stylesheet" type="text/css" href="index.css">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=PT+Sans&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+<body>
+
+	<div id="header">
+		<div id="nav-bar">
+
+			<h2 id="title"><a href="dashboard.html">Finance Management System</a></h2>
+			<div class = "nav-buttons">
+				<form>
+					<input type="text" class="login" name="email" placeholder="myname@gmail.com" required >
+					<input type="password" class="login" name="password" placeholder="Password" required >
+					<input class="submit-button" type="submit" name="submit" value="Log In" onclick="LogIn()">
+					<button class="submit-button" name="Sign" onclick="SignUp()">Sign Up</button>
+				</form>
+				
+			</div>
+
+		</div>
+
+	</div>
+
+	<div class="hero-banner">
+		<div class="text">
+
+			<h1> Manage your <br>
+			finances </h1>
+			<h2>Time to get organized</h2>
+			<p>Finance Management system will help you organize all of your financial dues, in just a few clicks. Just login with your account and you can track all the bills you have to pay for the month. With the help of this app, your budgetary control will be easier than ever.</p>
+			<a href="./signup.html"><button id="getstarted">Get Started</button></a>
+			
+		</div>
+		<div class="images-banner">
+			<img id="main-banner" src="./images/HeroBanner.svg" alt="image banner 1">
+			<!-- <img id="blob-banner" src="./images/blob.svg" alt="image banner 2"> -->
+		</div>
+		
+
+
+	</div>
+		
+	<div class="about">
+		<h2>About us</h2>
+		<p>A Finance and Bill Management App that reminds its users via notifications or email about their upcoming due dates for bills and subscriptions. The web portal can provide information on total expenses, frequency of transactions, and its current status whether paid or unpaid. It highlights urgent bills that are in need of payment and will make the user know when the bill is due to be paid. </p>
+		<p>The application was built as a main requirement for the subject CMSC 173, Institute of Computer Science, University of the Philippines Los Banos. The developer team is composed of Junior Level UPLB students that major in Computer Science, and each of their info can be found at the bottom of the page. All rights of this app belong to the Devolopers, Professor and the ICS UPLB. </p>
+
+	</div>
+
+	<div class="waves">
+		<img src="./images/wave1.svg" id="wave-1" alt="Wave 1">
+		<img src="./images/wave2.svg" id="wave-2" alt="Wave 2">
+	</div>
+
+	<div class="footer">
+		<h3>CONTACT US</h3>
+		<div class="group">
+			<div class="group-1">
+
+				<div class="person">
+					<img src="./images/ej.jpg" alt="Picture">
+					<div class="details">
+						<h4>Efraim John Macaldo</h4>
+						<h5>egmacaldo@up.edu.ph</h5>
+						<h6>09162404332</h6>
+					</div>
+				</div>
+				<div class="person">
+					<img src="./images/erl.jpg" alt="Picture">
+					<div class="details">
+						<h4>Erl John Pangilinan</h4>
+						<h5>efpangilinan1@up.edu.ph</h5>
+						<h6>09190034852</h6>
+					</div>
+				</div>
+				<div class="person">
+					<img src="./images/france.jpg" alt="Picture">
+					<div class="details">
+						<h4>France Tolentino</h4>
+						<h5>fltolentino@up.edu.ph</h5>
+						<h6>09279853975</h6>
+					</div>
+				</div>
+
+			</div>
+
+			<div class="group-2">
+				<div class="person">
+					<img src="./images/gerard.jpg" alt="Picture">
+					<div class="details">
+						<h4>Gerard Ivan Olviga</h4>
+						<h5>gcolviga@up.edu.ph</h5>
+						<h6>09328853683</h6>
+					</div>
+				</div>
+				<div class="person">
+					<img src="./images/marlon.jpg" alt="Picture">
+					<div class="details">
+						<h4>Marlon Malonzo</h4>
+						<h5>mrmalonzo1@up.edu.ph</h5>
+						<h6>09569100953</h6>
+					</div>
+				</div>
+				<div class="person">
+					<img src="./images/philip.jpg" alt="Picture">
+					<div class="details">
+						<h4>Philip Xavier Li</h4>
+						<h5>ppli@up.edu.ph</h5>
+						<h6>09565777739</h6>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- The core Firebase JS SDK is always required and must be listed first -->
+	<script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-app.js"></script>
+
+	<!-- TODO: Add SDKs for Firebase products that you want to use
+		https://firebase.google.com/docs/web/setup#available-libraries -->
+	<script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-analytics.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-database.js"></script>
+
+	<script>
+	// Your web app's Firebase configuration
+	// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+	var firebaseConfig = {
+		apiKey: "AIzaSyAHZ6wiI01vcxperQQ0IvLXANoNf9782KY",
+		authDomain: "fibumasy-58aff.firebaseapp.com",
+		databaseURL: "https://fibumasy-58aff-default-rtdb.firebaseio.com",
+		projectId: "fibumasy-58aff",
+		storageBucket: "fibumasy-58aff.appspot.com",
+		messagingSenderId: "265282923606",
+		appId: "1:265282923606:web:810282a02bb08f16041ff7",
+		measurementId: "G-FHE9RXZ2HP"
+	};
+	// Initialize Firebase
+	firebase.initializeApp(firebaseConfig);
+	firebase.analytics();
+	</script>
+	<script type="text/javascript" src="./index.js"></script>
+	
+</html>

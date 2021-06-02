@@ -1,0 +1,210 @@
+body{
+	background: #2A3950;
+	background-image: url('images/svg.png');
+	background-position: 0 210px;
+	background-repeat: no-repeat;
+	background-size: 100%;
+}
+
+table {
+	font-family: 'Roboto';
+}
+
+th, td {
+	border-bottom: 2px solid #ddd;
+}
+
+#nav-bar{
+	padding: 0px 40px;
+	background: #2A3950;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	text-decoration-line: none;
+	color: #949FA9;
+}
+
+#title a{
+	color: inherit;
+	font-family: 'PT Serif', serif;
+	font-size: 50px;
+	font-weight: bolder;
+}
+
+#profile{
+	position: relative;
+	top: 20px;
+	padding: 0px 20px;
+}
+
+
+.signout-button{
+	padding: 5px 20px;
+	background-color: #F99579;
+	border-radius: 15px;
+	text-align: center;
+	color: white;
+	margin-right: 15px;
+	font-size: 18px;
+}
+
+
+#greeting1 {
+	font-size: 150%;
+	font-weight: bold;
+	font-family: 'Roboto';
+	color: white;
+	margin-left: 100px;
+}
+
+#greeting2 {
+	margin-left: 100px;
+	color: white;
+	font-family: 'Roboto';
+}
+
+#reminders {
+	margin-left: 250px;
+	padding-top: 10px;
+	color: white;
+	font-family: 'Roboto';
+	font-size: 150%;
+	font-weight: bold;
+}
+
+#flex-container {
+	display: flex;
+	justify-content: space-evenly;
+}
+
+.flex {
+	display: flex;
+}
+
+#container1 {
+	background: #F54768;
+	margin-left: 25px;
+	margin-top: 10px;
+	width: 125%;
+	height: 45%;
+	border-radius: 10px;
+}
+
+#container2 {
+	background: #F99579;
+	margin-left: 25px;
+	margin-top: 50px;
+	width: 125%;
+	height: 45%;
+	border-radius: 10px;
+}
+
+#container3 {
+	background: #949FA9;
+	margin-left: 100px;
+	margin-top: 50px;
+	height: 700px;
+	width: 700px;
+	border-radius: 10px;
+}
+
+#container4 {
+	background: black;
+	margin-top: 50px;
+	width: 100%;
+	height: 50%;
+	border-radius: 10px;
+}
+
+
+#container5 {
+	background: #993C5F;
+	margin-top: 50px;
+	width: 350px;
+	height: 100px;
+	border-radius: 10px;
+}
+
+
+.container-head {
+	font-family: 'Roboto'; 
+	margin-left: 50px;
+	padding-top: 10px;
+	font-size: 125%;
+	color: white;
+}
+
+.icons{
+	margin-left: 10px;
+	margin-top: 25px;
+}
+
+.container1-body {
+	background: pink;
+	border-radius: 10px;
+	width: 250px;
+	height: 100px;
+	margin-left: 25px;
+	margin-top: 20px
+}
+
+.container2-body {
+	background: white;
+	border: solid gray;
+	width: 250px;
+	height: 100px;
+	margin-left: 25px;
+	margin-top: 20px
+	
+}
+
+.container-text {
+	font-family: 'Roboto';
+	font-weight: bold;
+	padding-top: 20px;
+	padding-left: 20px;
+}
+
+.due-date {
+	font-family: 'Roboto';
+	font-size: 80%;
+	padding-top: 20px;
+	padding-left: 20px;
+}
+
+.price {
+	font-family: 'Roboto';
+	padding-top: 20px;
+}
+
+#tip{
+	font-family: 'Roboto';
+	margin-top: 15px;
+	font-size: 20px;
+}
+
+tr {
+	background: white;
+}
+
+#activities-head {
+	font-family: 'Roboto';
+	margin-left: 5px;
+	padding-top: 10px;
+	font-size: 150%;
+	color: white;
+}
+
+#activities-table{
+	padding-top: 20px;
+	text-align: center;
+}
+
+#activities-table td {
+	padding: 20px;
+}
+
+#activities-table tr:hover {
+	background: gray;
+}
+
