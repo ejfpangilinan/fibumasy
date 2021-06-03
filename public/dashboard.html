@@ -2,26 +2,84 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<script type="text/javascript" src="dashboard.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- The core Firebase JS SDK is always required and must be listed first -->
+	<script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-app.js"></script>
+
+	<!-- TODO: Add SDKs for Firebase products that you want to use
+		https://firebase.google.com/docs/web/setup#available-libraries -->
+	<script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-analytics.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.6.3/firebase-database.js"></script>
+	<script>
+	// Your web app's Firebase configuration
+	// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+	var firebaseConfig = {
+		apiKey: "AIzaSyAHZ6wiI01vcxperQQ0IvLXANoNf9782KY",
+		authDomain: "fibumasy-58aff.firebaseapp.com",
+		databaseURL: "https://fibumasy-58aff-default-rtdb.firebaseio.com",
+		projectId: "fibumasy-58aff",
+		storageBucket: "fibumasy-58aff.appspot.com",
+		messagingSenderId: "265282923606",
+		appId: "1:265282923606:web:810282a02bb08f16041ff7",
+		measurementId: "G-FHE9RXZ2HP"
+	};
+	// Initialize Firebase
+	firebase.initializeApp(firebaseConfig);
+	firebase.analytics();
+	</script>
+	<script src="dashboard.js"></script>
 	<link rel="stylesheet" href="dashboard.css">
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet"> 
 	<title>Dashboard</title>
 </head>
-<body>
+<body onload="onLoad()">
 	<div class="main-content">
+		<div id="myModal" class="modal">
+		  <div class="modal-content">
+		    <span onclick="displayNone()" class="close">&times;</span>
+		    <h3>Tell us your subscription</h3><hr>
+		    <div id="form">
+		    	<div class="modal-header">Service</div>
+		    	<input type="radio" id="spotify" name="service" value="Spotify">
+		    	<label for="spotify">Spotify</label><br>
+		    	<input type="radio" id="netflix" name="service" value="Netflix">
+		    	<label for="netflix">Netflix</label><br>
+		    	<input type="radio" id="youtube" name="service" value="YouTube Premium">
+		    	<label for="youtube">YouTube Premium</label><br>
+		    	<input type="radio" id="disney" name="service" value="Disney+">
+		    	<label for="disney">Disney+</label><br>
+		    	<input type="radio" id="discord" name="service" value="Discord Nitro">
+		    	<label for="dicord">Discord Nitro</label><br>
+		    	<input type="radio" id="zoom" name="service" value="Zoom">
+		    	<label for="zoom">Zoom</label><br>
+		    	<input type="radio" id="other" name="service" value="other">
+		    	<label for="other">Other:</label>
+		    	<input type="text" id="other-text" name="other"><br>
+		    	<div class="modal-header">Type of service</div>
+		    	<input type="radio" id="monthly" name="type" value="Monthly Subscription">
+		    	<label for="monthly">Monthly</label>
+		    	<input type="radio" id="netflix" name="type" value="Yearly Subscription">
+		    	<label for="yearly">Yearly</label><br>
+		    	<div class="modal-header">Price(PHP):<input type="text" id="price-text" name="price"><br></div>
+		    	<div class="modal-header">Date of next payment:<input type="date" id="payment-date" name="payment-date"></div>
+				<button id="submit-button" onclick="addSubscription()" name="submit">Submit</button>
+	    	</div>
+		  </div>
+
+		</div>
 		<div id="header">
 			<div id="nav-bar">
 				<h2 id="title"><a href="index.html">Finance Management System</a></h2>
 				<div>
 					<img id="profile" src="images/profile.png" widht="50" height="50">
-					<button class="signout-button" type="button">Sign Out</button>
+					<button id="signout-button" type="button">Sign Out</button>
 				</div>
 			</div>
 
 		</div>
 
-			<div id="greeting1">Hello, Joker!</div>
+			<div id="greeting1">Hello!</div>
 			<div id="greeting2">Have a fruitful day ahead!</div>
 			<div id="reminders">Reminders</div>
 
@@ -53,28 +111,30 @@
 
 					<div id="container2">
 						<div class="container-head">NEXT PAYMENT</div>
-						<table style="width: 90%; margin: 0 auto;" cellspacing="0">
-							<tr>
-								<td><img src="images/youtube.png" width="50" height="10" style="padding: 10px;"></td>
-								<td>YouTube Premium<br><br>P159</td>
-								<td>3:00 PM<br>06/03/21</td>
-							</tr>
-							<tr>
-								<td><img src="images/disney.png" width="50" height="30" style="padding: 10px;"></td>
-								<td>Disney+<br><br>P359</td>
-								<td>2:30 PM<br>06/05/21</td>
-							</tr>
-							<tr>
-								<td><img src="images/discord.svg" width="50" height="40" style="padding: 10px;"></td>
-								<td>Discord Nitro<br><br>P499</td>
-								<td>9:00 AM<br>06/07/21</td>
-							</tr>
-							<tr>
-								<td><img src="images/zoom.png" width="50" height="50" style="padding: 10px;"></td>
-								<td>Zoom<br><br>P720</td>
-								<td>9:00 AM<br>06/07/21</td>
-							</tr>
-						</table>
+						<div id="table-container1">
+							<table style="width: 90%; margin: 0 auto;" cellspacing="0">
+								<tr>
+									<td><img src="images/youtube.png" width="50" height="10" style="padding: 10px;"></td>
+									<td>YouTube Premium<br><br>P159</td>
+									<td>06/03/21</td>
+								</tr>
+								<tr>
+									<td><img src="images/disney.png" width="50" height="30" style="padding: 10px;"></td>
+									<td>Disney+<br><br>P359</td>
+									<td>06/05/21</td>
+								</tr>
+								<tr>
+									<td><img src="images/discord.svg" width="50" height="40" style="padding: 10px;"></td>
+									<td>Discord Nitro<br><br>P499</td>
+									<td>06/07/21</td>
+								</tr>
+								<tr>
+									<td><img src="images/zoom.png" width="50" height="50" style="padding: 10px;"></td>
+									<td>Zoom<br><br>P720</td>
+									<td>06/07/21</td>
+								</tr>
+							</table>
+						</div>
 					</div>
 				</div>
 				
@@ -84,64 +144,70 @@
 						<img src="images/graph.png" width="25" height="25" style="padding: 10px; margin-left:50px;">
 						<div id="activities-head">Activities</div>
 					</div>
-					<table id="activities-table" style="width: 90%; margin: 0 auto;" cellspacing="0">
-						<tr>
-							<th>Service</th>
-							<th>Type</th>
-							<th>Amount</th>
-							<th>Date</th>
-							<th>Status</th>
-						</tr>
-						<tr>
-							<td>Netflix</td>
-							<td>Monthly Subscription</td>
-							<td>P149</td>
-							<td>04/29/21</td>
-							<td>Completed</td>
-						</tr>
-						<tr>
-							<td>Disney+</td>
-							<td>Monthly Subscription</td>
-							<td>P359</td>
-							<td>04/27/21</td>
-							<td>Completed</td>
-						</tr>
-						<tr>
-							<td>Zoom</td>
-							<td>Monthly Subscription</td>
-							<td>P720</td>
-							<td>04/18/21</td>
-							<td>Completed</td>
-						</tr>
-						<tr>
-							<td>Spotify</td>
-							<td>Monthly Subscription</td>
-							<td>P129</td>
-							<td>04/15/21</td>
-							<td>Completed</td>
-						</tr>
-						<tr>
-							<td>YouTube Premium</td>
-							<td>Monthly Subscription</td>
-							<td>P159</td>
-							<td>04/12/21</td>
-							<td>Completed</td>
-						</tr>
-						<tr>
-							<td>Discord Nitro</td>
-							<td>Monthly Subscription</td>
-							<td>P499</td>
-							<td>04/05/21</td>
-							<td>Completed</td>
-						</tr>
-						<tr>
-							<td>ProtonVPN</td>
-							<td>Monthly Subscription</td>
-							<td>P499</td>
-							<td>04/02/21</td>
-							<td>Completed</td>
-						</tr>
-					</table>
+					<div id="table-container2">
+						<table id="activities-table" style="width: 90%; margin: 0 auto;" cellspacing="0">
+							<thead>
+								<tr>
+									<th>Service</th>
+									<th>Type</th>
+									<th>Amount</th>
+									<th>Date</th>
+									<th>Status</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>Netflix</td>
+									<td>Monthly Subscription</td>
+									<td>P149</td>
+									<td>04/29/21</td>
+									<td>Completed</td>
+								</tr>
+								<tr>
+									<td>Disney+</td>
+									<td>Monthly Subscription</td>
+									<td>P359</td>
+									<td>04/27/21</td>
+									<td>Completed</td>
+								</tr>
+								<tr>
+									<td>Zoom</td>
+									<td>Monthly Subscription</td>
+									<td>P720</td>
+									<td>04/18/21</td>
+									<td>Completed</td>
+								</tr>
+								<tr>
+									<td>Spotify</td>
+									<td>Monthly Subscription</td>
+									<td>P129</td>
+									<td>04/15/21</td>
+									<td>Completed</td>
+								</tr>
+								<tr>
+									<td>YouTube Premium</td>
+									<td>Monthly Subscription</td>
+									<td>P159</td>
+									<td>04/12/21</td>
+									<td>Completed</td>
+								</tr>
+								<tr>
+									<td>Discord Nitro</td>
+									<td>Monthly Subscription</td>
+									<td>P499</td>
+									<td>04/05/21</td>
+									<td>Completed</td>
+								</tr>
+								<tr>
+									<td>ProtonVPN</td>
+									<td>Monthly Subscription</td>
+									<td>P499</td>
+									<td>04/02/21</td>
+									<td>Completed</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
 				</div>
 
 				<div>
@@ -156,6 +222,7 @@
 							</div>
 						</div>
 					</div>
+					<button onclick="displayBlock()" id="add-button" type="button">Add Subscription</button>
 				</div>
 			</div>
 	</div>

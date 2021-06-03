@@ -24,6 +24,49 @@ th, td {
 	color: #949FA9;
 }
 
+ /* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* 15% from the top and centered */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 40%; /* Could be more or less, depending on screen size */
+  font-family: 'Roboto';
+}
+
+.modal-header{
+	font-weight: bold;
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+} 
+
 #title a{
 	color: inherit;
 	font-family: 'PT Serif', serif;
@@ -38,13 +81,36 @@ th, td {
 }
 
 
-.signout-button{
+#signout-button{
 	padding: 5px 20px;
 	background-color: #F99579;
 	border-radius: 15px;
 	text-align: center;
 	color: white;
 	margin-right: 15px;
+	font-size: 18px;
+}
+
+#submit-button{
+	padding: 5px 20px;
+	background-color: #949FA9;
+	border-radius: 15px;
+	text-align: center;
+	color: white;
+	margin-right: 15px;
+	font-size: 18px;
+}
+
+#add-button{
+	display: block;
+	padding: 20px 20px;
+	background-color: #F99579;
+	border-radius: 15px;
+	text-align: center;
+	color: white;
+	margin-top: 50px;
+	margin-left: auto;
+	margin-right: auto;
 	font-size: 18px;
 }
 
@@ -177,6 +243,7 @@ th, td {
 	padding-top: 20px;
 }
 
+
 #tip{
 	font-family: 'Roboto';
 	margin-top: 15px;
@@ -193,6 +260,17 @@ tr {
 	padding-top: 10px;
 	font-size: 150%;
 	color: white;
+}
+
+#table-container1 {
+	overflow: auto;
+  max-height: 300px;
+}
+
+
+#table-container2 {
+	overflow: auto;
+  max-height: 600px;
 }
 
 #activities-table{

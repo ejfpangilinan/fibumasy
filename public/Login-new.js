@@ -17,10 +17,11 @@ function sayHello() {
     let email =  form[1].value
     let password = form[2].value
 
-    firebase.database().ref('/users/'+Date.now()).set({
-        Name: name,
-        Email : email,
-        Password : password,
-        Subscriptions: [],
+    var db_email = email.split('.').join(',');
+    const dbRef = firebase.database().ref();
+
+    firebase.database().ref('/users/'+db_email).set({
+        name: name,
+        password : password
     });
 }
