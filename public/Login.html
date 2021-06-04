@@ -3,15 +3,16 @@
 <head>
 	<meta charset="UTF-8">
 	<link rel="stylesheet" href="./Login.css">
-	
-	<title>Login Page</title>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css">
+	<link href = "./images/HeaderLogo.png" rel="icon" type="image/gif">
+	<title>FiBuMaSy</title>
 
 </head>
 <body>
 	<nav class="header">
 		<div class="round"></div>
-		<a class="menu" title="Login" href= "https://google.com"><h3>Logo App Name</h3></a>
-		<form class="log-form" id ="log-form" >
+		<a class="menu" title="Login" href= "./index.html"><h3>Logo App Name</h3></a>
+		<form class="log-form" id ="log" >
 
 			<div class="entry">
 				<input class="fa fa-fire" type="text" id="email" name="email-add" placeholder="word@email.com    &#xf007;">
@@ -21,7 +22,8 @@
 				<input class="fa fa-fire" type="password" id="password" name="pass" placeholder="Password    &#xf084;">
 			</div>
 
-			<button class="login-button" form="log-form" onclick="logIn()">Log In</button>
+			<button id= "lbutton" class="login-button" form="log-form" name="s-button" type="submit" onclick="LogIn()">Log In</button>
+
 		</form>
 	</nav>
 	<div class="getstart"><h1>GET STARTED <br>FOR FREE.</h1></div>
@@ -39,10 +41,10 @@
 				<input type="password" id="s-password" placeholder="Password" name="spassword" required>
 			</div>
 			<div class="terms-cond">
-				<input type="checkbox" id="terms" name="terms" value="1">
+				<input type="checkbox" id="terms" name="terms" class="checking" onclick="isTerms()">
 				<label for="terms">I agree to the Terms and Conditions</label><br>
 			</div>
-			<button id="sbutton" class="sign-button s-entry" form="sign" name="s-button" type="submit" onclick="sayHello()">Sign Up</button>
+			<button id="sbutton" class="sign-button s-entry" form="sign" name="s-button" type="submit" onclick="SignUp()">Sign Up</button>
 		</form>
 	</div>
 
@@ -79,6 +81,7 @@
 	</script>
 	<script type="text/javascript" src="./Login-new.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.2/rollups/aes.js" integrity="sha256-/H4YS+7aYb9kJ5OKhFYPUjSJdrtV6AeyJOtTkw6X72o=" crossorigin="anonymous"></script>
 
 </body>
 </html>
