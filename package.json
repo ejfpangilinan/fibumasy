@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
+    "cryptojs": "^2.5.3",
     "firebase": "^8.6.3"
   },
   "devDependencies": {},
