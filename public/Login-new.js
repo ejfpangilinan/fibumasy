@@ -75,7 +75,7 @@ function SignUp() {
 			if(!IS_AGREE) {
 				alert('Please check \'I agree to the Terms and Conditions\'')
 			}else{
-				if(name!="" || email!="" || password!="" ){
+				if(name=="" || email=="" || password=="" ){
 					alert('Please fill up the required spaces')
 				}else{
 					console.log('saving to database')
