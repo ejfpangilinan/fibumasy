@@ -70,10 +70,10 @@
 		</div>
 		<div id="header">
 			<div id="nav-bar">
-				<h2 id="title"><a href="index.html">Finance Management System</a></h2>
+				<h2 id="title">Finance Management System</a></h2>
 				<div>
 					<img id="profile" src="images/profile.png" widht="50" height="50">
-					<button id="signout-button" type="button">Sign Out</button>
+					<button id="signout-button" type="button" onclick="signOut()">Sign Out</button>
 				</div>
 			</div>
 
@@ -87,52 +87,16 @@
 				<div>
 					<div id="container1">
 						<div class="container-head">URGENT</div>
-						<div class="container1-body">
-							<div class="flex">
-								<img src="images/spotify.png" width="50" height="50" class="icons">
-								<div>
-									<div class="container-text">Spotify</div>
-									<div class="due-date">Due Date: 05/29/21</div>
-								</div>
-								<div class="price">P129</div>
-							</div>
+						<div class="container1-body" id="urgent1">	
 						</div>
-						<div class="container1-body">
-							<div class="flex">
-								<img src="images/netflix.png" width="50" height="50" class="icons">
-								<div>
-									<div class="container-text">Netflix</div>
-									<div class="due-date">Due Date: 05/31/21</div>
-								</div>
-								<div class="price">P149</div>
-							</div>
+						<div class="container1-body" id="urgent2">
 						</div>
 					</div>
 
 					<div id="container2">
 						<div class="container-head">NEXT PAYMENT</div>
 						<div id="table-container1">
-							<table style="width: 90%; margin: 0 auto;" cellspacing="0">
-								<tr>
-									<td><img src="images/youtube.png" width="50" height="10" style="padding: 10px;"></td>
-									<td>YouTube Premium<br><br>P159</td>
-									<td>06/03/21</td>
-								</tr>
-								<tr>
-									<td><img src="images/disney.png" width="50" height="30" style="padding: 10px;"></td>
-									<td>Disney+<br><br>P359</td>
-									<td>06/05/21</td>
-								</tr>
-								<tr>
-									<td><img src="images/discord.svg" width="50" height="40" style="padding: 10px;"></td>
-									<td>Discord Nitro<br><br>P499</td>
-									<td>06/07/21</td>
-								</tr>
-								<tr>
-									<td><img src="images/zoom.png" width="50" height="50" style="padding: 10px;"></td>
-									<td>Zoom<br><br>P720</td>
-									<td>06/07/21</td>
-								</tr>
+							<table id="table1" style="width: 90%; margin: 0 auto;" cellspacing="0">
 							</table>
 						</div>
 					</div>
@@ -146,66 +110,13 @@
 					</div>
 					<div id="table-container2">
 						<table id="activities-table" style="width: 90%; margin: 0 auto;" cellspacing="0">
-							<thead>
-								<tr>
-									<th>Service</th>
-									<th>Type</th>
-									<th>Amount</th>
-									<th>Date</th>
-									<th>Status</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td>Netflix</td>
-									<td>Monthly Subscription</td>
-									<td>P149</td>
-									<td>04/29/21</td>
-									<td>Completed</td>
-								</tr>
-								<tr>
-									<td>Disney+</td>
-									<td>Monthly Subscription</td>
-									<td>P359</td>
-									<td>04/27/21</td>
-									<td>Completed</td>
-								</tr>
-								<tr>
-									<td>Zoom</td>
-									<td>Monthly Subscription</td>
-									<td>P720</td>
-									<td>04/18/21</td>
-									<td>Completed</td>
-								</tr>
-								<tr>
-									<td>Spotify</td>
-									<td>Monthly Subscription</td>
-									<td>P129</td>
-									<td>04/15/21</td>
-									<td>Completed</td>
-								</tr>
-								<tr>
-									<td>YouTube Premium</td>
-									<td>Monthly Subscription</td>
-									<td>P159</td>
-									<td>04/12/21</td>
-									<td>Completed</td>
-								</tr>
-								<tr>
-									<td>Discord Nitro</td>
-									<td>Monthly Subscription</td>
-									<td>P499</td>
-									<td>04/05/21</td>
-									<td>Completed</td>
-								</tr>
-								<tr>
-									<td>ProtonVPN</td>
-									<td>Monthly Subscription</td>
-									<td>P499</td>
-									<td>04/02/21</td>
-									<td>Completed</td>
-								</tr>
-							</tbody>
+							<tr>
+								<th>Service</th>
+								<th>Type</th>
+								<th>Amount</th>
+								<th>Date</th>
+								<th>Status</th>
+							</tr>
 						</table>
 					</div>
 				</div>

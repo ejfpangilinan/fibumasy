@@ -205,6 +205,14 @@ th, td {
 	margin-top: 25px;
 }
 
+#urgent1{
+	display: none;
+}
+
+#urgent2{
+	display: none;
+}
+
 .container1-body {
 	background: pink;
 	border-radius: 10px;
@@ -212,6 +220,10 @@ th, td {
 	height: 100px;
 	margin-left: 25px;
 	margin-top: 20px
+}
+
+.container1-body:hover{
+	background: #993C5F;
 }
 
 .container2-body {
@@ -227,7 +239,7 @@ th, td {
 .container-text {
 	font-family: 'Roboto';
 	font-weight: bold;
-	padding-top: 20px;
+	padding-top: 10px;
 	padding-left: 20px;
 }
 
@@ -267,6 +279,10 @@ tr {
   max-height: 300px;
 }
 
+
+#table1 tr:hover {
+	background: gray;
+}
 
 #table-container2 {
 	overflow: auto;
