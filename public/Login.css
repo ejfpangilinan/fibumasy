@@ -42,10 +42,11 @@ body{
   float: left;
   display: block;
   font-weight: bolder;
-  color: #66FCF1;
+  color: #949FA9;
   text-align: center;
   margin-left: 20px;
-  top: 0; bottom: 0;
+	font-family: 'PT Serif', serif;
+	font-size: 20px;
 }
 
 .header, .footer{

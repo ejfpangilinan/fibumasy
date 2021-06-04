@@ -72,17 +72,20 @@ function SignUp() {
 			console.log('You already have an account! Try Again Using different email')
             alert('You already have an account! Try Again Using different email')
         }else{
-			console.log('dito sa sign')
 			if(!IS_AGREE) {
 				alert('Please check \'I agree to the Terms and Conditions\'')
 			}else{
-				console.log('saving to database')
-				firebase.database().ref('/users/'+cleanEmailKey).set({ //save to database
-					name: name,
-					email : email,
-					password : encrypt(password)
-				}).then(alert('SUCCESS!'))
-				console.log('saved to database')
+				if(name!="" || email!="" || password!="" ){
+					alert('Please fill up the required spaces')
+				}else{
+					console.log('saving to database')
+					firebase.database().ref('/users/'+cleanEmailKey).set({ //save to database
+						name: name,
+						email : email,
+						password : encrypt(password)
+					}).then(alert('SUCCESS!'))
+					console.log('saved to database')
+				}
 			}
         }
     });
