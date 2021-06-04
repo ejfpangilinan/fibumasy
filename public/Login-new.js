@@ -22,7 +22,7 @@ function LogIn() {
 		firebase.database().ref("users/"+db_email).get().then((snapshot) => {
 			if (snapshot.exists()) {
 			// check if password is correct
-				if(decrypt(snapshot.val().Password) == password){
+				if(decrypt(snapshot.val().password) == password){
 					// store email to be used on dashboard
 					localStorage.setItem("email", db_email);
 					window.location.assign("./dashboard.html");
@@ -78,9 +78,9 @@ function SignUp() {
 			}else{
 				console.log('saving to database')
 				firebase.database().ref('/users/'+cleanEmailKey).set({ //save to database
-					Name: name,
-					Email : email,
-					Password : encrypt(password)
+					name: name,
+					email : email,
+					password : encrypt(password)
 				}).then(alert('SUCCESS!'))
 				console.log('saved to database')
 			}
